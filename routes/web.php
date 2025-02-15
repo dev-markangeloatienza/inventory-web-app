@@ -15,9 +15,6 @@ Route::middleware(\App\Http\Middleware\AuthMiddleware::class)->namespace('App\Ht
     // USERS
 
     Route::get('/users/view/{id}', 'UserController@show')->name('pages.user.show');
-    Route::get('/users/view', 'UserController@index')->name('pages.users.view');
-    Route::get('/users/create', 'UserController@create')->name('pages.users.create');
-
     // PRODUCTS
     // Route::get('/products/view/{id}', 'UserController@show')->name('pages.product.show');
     Route::get('/products/view', 'ProductController@index')->name('pages.products.view');
@@ -32,8 +29,7 @@ Route::middleware(\App\Http\Middleware\AuthMiddleware::class)->namespace('App\Ht
     // SUPPLIERS
 
     Route::get('/suppliers/view', 'SupplierController@index')->name('pages.suppliers.view');
-    Route::get('/suppliers/create', 'SupplierController@create')->name('pages.suppliers.create');
-    Route::post('/suppliers/create', 'SupplierController@store')->name('action.suppliers.store');
+
 
     // PURCHASE ORDERS
 
@@ -42,5 +38,18 @@ Route::middleware(\App\Http\Middleware\AuthMiddleware::class)->namespace('App\Ht
     Route::post('/purchases/create', 'PurchaseItemController@store')->name('action.purchases.store');
 
     Route::get('/roles','RoleController@index')->name('pages.roles');
+
+    Route::middleware(\App\Http\Middleware\UserPermission::class)->group(function () {
+        // Route::get('/roles/create','RoleController@create')->name('pages.roles.create');
+        // Route::post('/roles/create','RoleController@store')->name('action.roles.store');
+
+        // Secure create and view users
+        Route::get('/users/view', 'UserController@index')->name('pages.users.view');
+        Route::get('/users/create', 'UserController@create')->name('pages.users.create');
+
+        // Secure create and view suppliers
+        Route::post('/suppliers/create', 'SupplierController@store')->name('action.suppliers.store');
+        Route::get('/suppliers/create', 'SupplierController@create')->name('pages.suppliers.create');
+    });
 
 });

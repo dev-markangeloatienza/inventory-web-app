@@ -46,8 +46,9 @@
             </tr>
           @endforeach
         </tbody>
-        {{$products->links()}}
       </table>
+      {{$products->links()}}
+
     </div>
     <x-create-product-modal/>
     <x-create-category-modal/>
