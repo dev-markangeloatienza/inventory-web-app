@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('purchases', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('supplier_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('supplier_id')->constrained('suppliers')->cascadeOnDelete();
             $table->decimal('total_cost',10,2);
             $table->date('purchase_date');
             $table->timestamps();
@@ -21,8 +21,8 @@ return new class extends Migration
         
         Schema::create('purchase_items', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('purchase_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('product_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('purchase_id')->constrained('purchases')->cascadeOnDelete();
+            $table->foreignId('product_id')->constrained('products')->cascadeOnDelete();
             $table->integer('quantity');
             $table->timestamps();
         });

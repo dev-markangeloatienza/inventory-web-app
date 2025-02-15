@@ -67,6 +67,8 @@ Stores information about product suppliers.
 
 ## **5. `purchases` (For Stock Inflow)**
 
+<!-- incoming product stock, update quantity -->
+
 Records purchases from suppliers.
 
 | Column          | Type          | Description                |
@@ -92,6 +94,8 @@ Tracks which products were purchased.
 ---
 
 ## **7. `sales` (For Stock Outflow)**
+
+<!-- record of outgoing products, update quantity of product -->
 
 Records sales transactions.
 

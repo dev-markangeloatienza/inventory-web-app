@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use App\Models\InventoryLogs;
 use App\Models\Sales;
+use App\Models\Roles;
 
 class User extends Authenticatable
 {
@@ -23,6 +24,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role_id'
     ];
 
     /**
@@ -54,5 +56,9 @@ class User extends Authenticatable
 
     public function sales(){
         return $this->hasMany(Sales::class);
+    }
+
+    public function role(){
+        return $this->belongsTo(Roles::class);
     }
 }

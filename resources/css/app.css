@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Icon after product movement */
+.icon-movement::after {
+  content: '*'; /* Unicode for Font Awesome's 'arrow-right' icon */
+  font-family: 'Font Awesome 5 Free'; /* Ensure Font Awesome is being used */
+  font-weight: 900; /* Font Awesome's solid icon weight */
+  margin-left: 8px; /* Optional, space between text and icon */
+  position: absolute;
+  bottom: 0; /* Position it at the bottom */
+  left: 0%; /* Horizontally center it */
+  transform: translateX(-50%); /* Correct for the exact center */
+  margin-bottom: 4px;
+}

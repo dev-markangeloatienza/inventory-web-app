@@ -4,21 +4,27 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
     //
 
     public function index(){
-        // $users = User::orderBy('created_at', 'desc')->get();
-
-        return view('pages.users');
+        $users = User::with('role')->orderBy('created_at','desc')->paginate('10');
+        
+        return view('pages.users-view',['users'=>$users]);
     }
 
     public function show($id){
-        $users = User::orderBy('created_at', 'desc')->findOrFail($id);
+        $user = User::with('role')->orderBy('created_at', 'desc')->findOrFail($id);
 
-        return view('pages.users',['users'=>$users]);
+        return view('pages.user-view',['user'=>$user]);
+    }
+
+    public function create(){
+
+        return view('pages.users-create');
     }
 
 }

@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Categories;
+use App\Models\Category;
 use App\Models\InventoryLogs;
 use App\Models\Supplier;
 use App\Models\PurchaseItems;
@@ -20,12 +20,12 @@ class Products extends Model
         'category_id',
         'supplier_id',
         'sku',
-        'quantity',
+        'stock',
         'price'
     ];
 
     public function category(){
-        return $this->belongsTo(Categories::class);
+        return $this->belongsTo(Category::class);
     }
 
     public function inventoryLogs(){
