@@ -46,6 +46,7 @@
             </tr>
           @endforeach
         </tbody>
+        {{$products->links()}}
       </table>
     </div>
     <x-create-product-modal/>

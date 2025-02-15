@@ -27,7 +27,7 @@
 
     <div class="flex flex-col">
       <label for="price">Price</label>
-      <input type="number" name="price" value="{{old('price')}}" id="price" min="1" class="h-10 px-2 bg-gray-standard">
+      <input type="number" name="price" value="{{old('price')}}" id="price" min="1" size="0.01" class="h-10 px-2 bg-gray-standard">
     </div>
 
     <div class="flex flex-col">
