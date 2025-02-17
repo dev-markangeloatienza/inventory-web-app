@@ -6,7 +6,7 @@
       <small>View user details and inventory logs of user</small>
     </div>
     <div class='grid grid-cols-6'>
-      <div class="col-span-2 max-h-fit border border-secondary p-5 rounded-[10px]">
+      <div class="col-span-2 max-h-fit shadow-lg p-5 rounded-[10px] bg-white">
         <div class="flex flex-col justify-between gap-4">
           <div class="leading-1 flex flex-col">
             <p><span class="text-2xl ">{{$data['user']->name}} </span> <small class="uppercase font-bold text-gray-500">({{$data['user']->role->name}})</small></p>

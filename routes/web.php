@@ -15,6 +15,7 @@ Route::middleware(\App\Http\Middleware\AuthMiddleware::class)->namespace('App\Ht
     // USERS
 
     Route::get('/users/view/{id}', 'UserController@show')->name('pages.user.show');
+    Route::post('/users', 'UserController@store')->name('action.users.store');
     // PRODUCTS
     // Route::get('/products/view/{id}', 'UserController@show')->name('pages.product.show');
     Route::get('/products/view', 'ProductController@index')->name('pages.products.view');

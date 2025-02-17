@@ -5,9 +5,10 @@
       <h1 class="text-3xl font-bold">Users - View</h1>
       <small>View, select, modify or delete users.</small>
     </div>
-    <div>
-      <x-create-modal>
-      </x-create-modal>
+    <div class="flex flex-col gap-4 ">
+      <div class="flex gap-4 justify-end">
+        <button data-button-target='create-user-modal' class="modal-trigger cursor-pointer outline-none border-none px-4 py-2 bg-secondary text-white rounded-[10px]">Add user</button>
+      </div>
       <table class="min-w-full">
         <thead>
           <tr class="text-left">
@@ -41,6 +42,9 @@
           @endforeach
         </tbody>
       </table>
+      <x-create-user-modal />
+      <x-alert-toaster/>
+      <x-success-toaster/>
       {{ $users->links() }}
     </div>
    

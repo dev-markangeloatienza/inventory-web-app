@@ -10,6 +10,16 @@
       <span  class="pl-1">Profile</span>
   </a>
 
+  <a href="{{ route('pages.products.view') }}" class="px-4 py-4 text-white cursor-pointer border-r-0 border-t-0 border-b-0 border-l-[15px] border-transparent  hover:bg-white hover:text-secondary hover:border-primary
+  {{isActive('pages.products.view','!border-primary bg-white !text-secondary font-bold')}} ">
+    <span  class="pl-1">Products</span>
+  </a>
+
+  <a href="{{ route('pages.suppliers.view') }}" class="px-4 py-4 text-white cursor-pointer border-r-0 border-t-0 border-b-0 border-l-[15px] border-transparent  hover:bg-white hover:text-secondary hover:border-primary
+    {{isActive('pages.suppliers.view','!border-primary bg-white !text-secondary font-bold')}} ">
+      <span  class="pl-1">Suppliers</span>
+  </a>
+
   {{-- TODO: Role management, depends if they want to be flexible --}}
   {{-- <div>
       <div class="px-4 py-4 text-white cursor-pointer border-r-0 border-t-0 border-b-0 border-l-[15px] border-transparent  hover:bg-white hover:text-secondary hover:border-primary" id="roles-sb-id">
@@ -43,7 +53,7 @@
           </a>
       </div>
   </div> --}}
-
+{{-- 
   <div>
       <div class="sidebar-trigger px-4 py-4 text-white cursor-pointer border-r-0 border-t-0 border-b-0 border-l-[15px] border-transparent  hover:bg-white hover:text-secondary hover:border-primary" id="products-sb-id" data-dropdown-target="products-dropdown">
           <span  class="pl-1">Products</span>
@@ -66,7 +76,7 @@
               <span  class="pl-5">View</span>
           </a>
       </div>
-  </div>
+  </div> --}}
   
   <form action="{{ route('auth.logout')}}" method="POST" class="mt-auto">
       @csrf

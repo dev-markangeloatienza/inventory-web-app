@@ -6,7 +6,7 @@
       <small>View product details and history</small>
     </div>
     <div class="grid grid-cols-6  gap-4">
-      <div class="col-span-2 max-h-fit border border-secondary p-5  rounded-[10px]">
+      <div class="col-span-2 max-h-fit bg-white shadow-lg p-5  rounded-[10px]">
         <div class="flex flex-col justify-between gap-4">
           <div class="leading-1 flex flex-col">
             <p class="text-2xl">{{$data['product']->name }}</p>
