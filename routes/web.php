@@ -12,10 +12,14 @@ Route::middleware(\App\Http\Middleware\AuthMiddleware::class)->namespace('App\Ht
     Route::get('/', 'DashboardController@index')->name('pages.dashboard');
     Route::post('/logout', 'AuthController@logout')->name('auth.logout');
 
+    // ROLES
+    Route::get('/roles','RoleController@index')->name('pages.roles');
+
+
     // USERS
+    Route::post('/users', 'UserController@store')->name('action.users.store');
 
     Route::get('/users/view/{id}', 'UserController@show')->name('pages.user.show');
-    Route::post('/users', 'UserController@store')->name('action.users.store');
     // PRODUCTS
     // Route::get('/products/view/{id}', 'UserController@show')->name('pages.product.show');
     Route::get('/products/view', 'ProductController@index')->name('pages.products.view');
@@ -38,7 +42,9 @@ Route::middleware(\App\Http\Middleware\AuthMiddleware::class)->namespace('App\Ht
     // Route::get('/purchases/create', 'SupplierController@create')->name('pages.purchases.create');
     Route::post('/purchases/create', 'PurchaseItemController@store')->name('action.purchases.store');
 
-    Route::get('/roles','RoleController@index')->name('pages.roles');
+    // SALES ORDERS
+    Route::get('/sales/view', 'SalesController@index')->name('pages.sales.view');
+
 
     Route::middleware(\App\Http\Middleware\UserPermission::class)->group(function () {
         // Route::get('/roles/create','RoleController@create')->name('pages.roles.create');

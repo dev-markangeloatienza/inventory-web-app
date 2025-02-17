@@ -28,10 +28,10 @@
         </div>
       </div>
       <div class="col-span-1"></div>
-      <div class="col-span-3  ">
+      <div class="col-span-3  bg-white p-5 shadow-lg rounded-[10px]">
         <p class="text-2xl">Product History</p>
 
-        <div class='max-h-[500px] border-b-2 overflow-y-auto'>
+        <div class='max-h-[500px]  overflow-y-auto'>
           <div class="flex flex-col gap-4 mt-2">
             @foreach( $data['purchase_items'] as $item)
               <div class="grid grid-cols-3 mb-5">
@@ -49,8 +49,6 @@
                   </div>
                   
                 </div>
-                <div class='border border-x-0 border-t-0 border-b border-secondary '></div>
-                <!-- Include Font Awesome (if you're using Font Awesome) -->
                 
               </div>
             @endforeach

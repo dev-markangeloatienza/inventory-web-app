@@ -25,6 +25,11 @@
       <span  class="pl-1">Suppliers</span>
   </a>
 
+  <a href="{{ route('pages.sales.view') }}" class="px-4 py-4 text-white cursor-pointer border-r-0 border-t-0 border-b-0 border-l-[15px] border-transparent  hover:bg-white hover:text-secondary hover:border-primary
+    {{isActive('pages.sales.view','!border-primary bg-white !text-secondary font-bold')}} ">
+      <span  class="pl-1">Sales</span>
+  </a>
+
   {{-- <div>
       <div class="sidebar-trigger px-4 py-4 text-white cursor-pointer border-r-0 border-t-0 border-b-0 border-l-[15px] border-transparent  hover:bg-white hover:text-secondary hover:border-primary" id="users-sb-id" data-dropdown-target="users-dropdown">
           <span  class="pl-1">Users</span>

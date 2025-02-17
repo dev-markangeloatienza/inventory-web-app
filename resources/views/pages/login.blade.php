@@ -11,7 +11,7 @@
       <form action="{{ route('auth.login') }}" method="post" class="flex flex-col px-5 gap-2">
         @csrf
         <label for="email">Email address</label>
-        <input type="email" name="email" id="email" placeholder="Email" class="h-[50px] pl-2 border border-black rounded-[10px] bg-gray-standard text-xl" autocomplete="off" required>
+        <input type="email" name="email" id="email" placeholder="Email" class="h-[50px] pl-2 border border-black rounded-[10px] bg-gray-standard text-xl" value="{{old('email')}}" autocomplete="off" required>
         <label for="password">Password</label>
         <input type="password" name="password" id="password" placeholder="Password" class="h-[50px] pl-2 border border-black rounded-[10px] bg-gray-standard text-xl" autocomplete="off" required>
         <button type="submit" class="text-white mt-5 rounded-[10px] bg-primary border-2 border-transparent hover:border-black py-3 text-xl">Login</button>
